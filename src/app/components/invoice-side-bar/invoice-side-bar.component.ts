@@ -44,6 +44,26 @@ export class InvoiceSideBarComponent implements OnInit {
 
     }
 
+    /**
+     * 
+     * @param data updated line item of invoice
+     */
+    updatedInvoice(data) {
+        this.invoiceList.forEach(result => {
+            if (result.customer_id === data.customer_id) {
+                result.line_items = data.line_items;
+                result.totalAmount = 0;
+                result.line_items.forEach(res1 => {
+                    if (res1.price_cents) {
+                        result.totalAmount = result.totalAmount + res1.quantity * res1.price_cents;
+
+                    }
+                });
+            }
+        });
+        this.calculateInvoice();
+    }
+
     filterInvoiceList() {
         let totalAmount = 0;
         this.invoiceList.forEach(res => {
@@ -103,5 +123,7 @@ export class InvoiceSideBarComponent implements OnInit {
         }
 
     }
+
+
 
 }

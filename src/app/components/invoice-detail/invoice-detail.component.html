@@ -194,8 +194,11 @@
         <!-- <input type="text" class="form-control" [(ngModel)]="item.description" id="ksdfsdfsdun" name="kucvxcvxcnden"> -->
     </div>
     <div class="col-sm-1">
-        <input type="text" class="form-control" [(ngModel)]="item.quantity" (ngModelChange)="calculateInvoiceAmount()"
-            id="ksdfun" name="kundewwewefn">
+            <select class="custom-select" [(ngModel)]="item.quantity" (ngModelChange)="calculateInvoiceAmount(true)">
+                <option [value]="quantity" *ngFor="let quantity of quantityList" >{{quantity}}</option>
+            </select>
+     
+
     </div>
     <div class="col-sm-1 flex">
         <input type="text" class="form-control" [(ngModel)]="item.price_cents" id="fds" name="fsd"

@@ -81,7 +81,7 @@
     </div>
     <div class="col-sm-9 invoice_detail">
         <div class="main" style="    margin-bottom: 55px;">
-            <app-invoice-detail *ngIf="isShow" [invoiceDetail]="invoiceDetail"></app-invoice-detail>
+            <app-invoice-detail *ngIf="isShow" (calculateInvoice)="updatedInvoice($event)" [invoiceDetail]="invoiceDetail"></app-invoice-detail>
         </div>
     </div>
 

@@ -23,7 +23,10 @@ export class InvoiceDetailComponent implements OnInit, OnChanges {
         this.calculateInvoiceAmount();
     }
 
-    addNewInvoice() {
+    /**
+     * it is use to add new line item to  selected invoice 
+     */
+    addNewInvoice = (): void => {
         let obj: LineItem = new LineItem();
         obj.name = '';
         obj.description = '';
@@ -40,9 +43,10 @@ export class InvoiceDetailComponent implements OnInit, OnChanges {
     /**
      * 
      * @param isChange this optional parameter for handle callling function by change qty or ngOnchange 
+     * it use to calculate total amount of line item of selected invoice and apply tax on it total amount
      */
 
-    calculateInvoiceAmount(isChange?) {
+    calculateInvoiceAmount = (isChange?): void => {
         let totalAmount = 0;
         this.invoiceDetail.line_items.forEach(res => {
             totalAmount = totalAmount + res.quantity * res.price_cents;
@@ -59,12 +63,16 @@ export class InvoiceDetailComponent implements OnInit, OnChanges {
      * 
      * @param index its array index value to delete invoice
      */
-    deleteInvoice(index) {
+    deleteInvoice = (index): void => {
         this.invoiceDetail.line_items.splice(index, 1);
         this.calculateInvoiceAmount();
     }
 
-    viewContentData() {
+    /**
+     * it is use to call parent component funtion for invoice calculation
+     */
+    viewContentData = (): void => {
         this.calculateInvoice.emit(this.invoiceDetail);
+
     }
 }

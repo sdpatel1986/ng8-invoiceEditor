@@ -35,7 +35,10 @@ export class InvoiceSideBarComponent implements OnInit {
         });
     }
 
-    onSelectInvoice(invoice) {
+    /**
+     * it is use when we select invoice from side bar and active that invoice for further calculation 
+     */
+    onSelectInvoice = (invoice): void => {
         if (invoice.customer_id) {
             this.filterInvoiceList();
             invoice.isActive = true;
@@ -47,8 +50,9 @@ export class InvoiceSideBarComponent implements OnInit {
     /**
      * 
      * @param data updated line item of invoice
+     * this function call from app-invoice-detail(child component) component to upadate the invoice amount 
      */
-    updatedInvoice(data) {
+    updatedInvoice = (data): void => {
         this.invoiceList.forEach(result => {
             if (result.customer_id === data.customer_id) {
                 result.line_items = data.line_items;
@@ -64,7 +68,10 @@ export class InvoiceSideBarComponent implements OnInit {
         this.calculateInvoice();
     }
 
-    filterInvoiceList() {
+    /**
+     * it is use to calculate total amount of line items for each invoice.
+     */
+    filterInvoiceList = (): void => {
         let totalAmount = 0;
         this.invoiceList.forEach(res => {
             if (res.line_items && res.line_items.length > 0) {
@@ -81,7 +88,10 @@ export class InvoiceSideBarComponent implements OnInit {
         });
     }
 
-    importInvoice() {
+    /**
+     * it is use to import selected invoice detail to  app-invoice-detail component
+     */
+    importInvoice = (): void => {
         this.invoiceList.forEach(list => {
             if (list.isActive) {
                 this.invoiceDetail = list;
@@ -89,7 +99,12 @@ export class InvoiceSideBarComponent implements OnInit {
         });
     }
 
-    calculateInvoice() {
+
+    /**
+     * it is use calculate total amount of invoice.
+     * also add 19% tax on total amount
+     */
+    calculateInvoice = (): void => {
         let totalAmount = 0;
         this.invoiceList.forEach(res => {
             totalAmount = totalAmount + +res.totalAmount;
@@ -98,7 +113,11 @@ export class InvoiceSideBarComponent implements OnInit {
         this.invoiceTotal.tax = (totalAmount * 19) / 100;
     }
 
-    addNewInvoice() {
+    /**
+     * its use to add new invoice in invoiceList array 
+     */
+
+    addNewInvoice = (): void => {
         if (this.invoiceList[this.invoiceList.length - 1].customer_name) {
             let obj: InvoiceModel = new InvoiceModel();
             obj.customer_id = 0;
@@ -110,7 +129,11 @@ export class InvoiceSideBarComponent implements OnInit {
 
     }
 
-    export() {
+    /**
+     * export function download selected invoice detail in json format
+     * in this we create a element and set attribite href and download and fire event click.
+     */
+    export = (): void => {
         if (this.invoiceDetail.customer_id > 0) {
             this.setting.element.dynamicDownload = document.createElement('a');
             const element = this.setting.element.dynamicDownload;

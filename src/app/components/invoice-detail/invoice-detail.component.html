@@ -202,7 +202,7 @@
     </div>
     <div class="col-sm-1 flex">
         <input type="text" class="form-control" [(ngModel)]="item.price_cents" id="fds" name="fsd"
-            (ngModelChange)="calculateInvoiceAmount()">
+            (ngModelChange)="calculateInvoiceAmount(true)">
         <span class="symbol"> €</span>
     </div>
     <div class="col-sm-1">{{item.quantity * item.price_cents }} €</div>

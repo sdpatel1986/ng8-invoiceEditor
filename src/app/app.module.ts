@@ -10,6 +10,7 @@ import { InvoiceSideBarComponent } from './components/invoice-side-bar/invoice-s
 import { InvoiceDetailComponent } from './components/invoice-detail/invoice-detail.component';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import { NotFoundComponent } from './components/not_found/not_found.component';
 registerLocaleData(localeFr, 'fr');
 
 @NgModule({
@@ -17,7 +18,8 @@ registerLocaleData(localeFr, 'fr');
     AppComponent,
     HeaderComponent,
     InvoiceSideBarComponent,
-    InvoiceDetailComponent
+    InvoiceDetailComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

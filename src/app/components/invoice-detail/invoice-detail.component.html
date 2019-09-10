@@ -1,0 +1,248 @@
+<div class="col-sm-12 invoice_detail_body">
+    <div class="col-sm-6">
+        <span>ALLGEMEINE DATEN</span>
+    </div>
+    <div class="col-sm-6">
+        <span>ZAHLUNGSINFORMATIONEN</span>
+    </div>
+</div>
+<div class="col-sm-12 invoice_detail_Content">
+    <div class="col-sm-6 flex">
+        <div class="col-sm-3 pd0">
+            Kundennr.
+        </div>
+        <div class="col-sm-9 pd0">
+            <input type="text" [(ngModel)]="invoiceDetail.customer_id" class="form-control">
+        </div>
+    </div>
+    <div class="col-sm-6 flex">
+        <div class="col-sm-3 pd0">
+            IBAN
+        </div>
+        <div class="col-sm-9 pd0">
+            <input type="text" class="form-control" [(ngModel)]="invoiceDetail.iban">
+        </div>
+    </div>
+</div>
+<div class="col-sm-12 invoice_detail_Content">
+    <div class="col-sm-6 flex">
+        <div class="col-sm-3 pd0">
+            Name
+        </div>
+        <div class="col-sm-9 pd0">
+            <input type="text" class="form-control" [(ngModel)]="invoiceDetail.customer_name">
+        </div>
+    </div>
+    <div class="col-sm-6 flex">
+        <div class="col-sm-3 pd0">
+            BIC
+        </div>
+        <div class="col-sm-9 pd0">
+            <input type="text" class="form-control" [(ngModel)]="invoiceDetail.bic">
+        </div>
+    </div>
+</div>
+<div class="col-sm-12 invoice_detail_Content">
+    <div class="col-sm-6 flex">
+        <div class="col-sm-3 pd0">
+            Ansprechpartner
+        </div>
+        <div class="col-sm-9 pd0">
+            <input type="text" class="form-control" [(ngModel)]="invoiceDetail.customer_contact_person" id="kun"
+                name="kunden">
+        </div>
+    </div>
+    <div class="col-sm-6 flex">
+        <div class="col-sm-3 pd0">
+            Kontoinhaber
+        </div>
+        <div class="col-sm-9 pd0">
+            <input type="text" class="form-control" [(ngModel)]="invoiceDetail.account_owner">
+        </div>
+    </div>
+</div>
+<div class="col-sm-12 invoice_detail_Content">
+    <div class="col-sm-6 flex">
+        <div class="col-sm-3 pd0">
+            Anschrift
+        </div>
+        <div class="col-sm-9 pd0">
+            <input type="text" class="form-control" [(ngModel)]="invoiceDetail.customer_address">
+        </div>
+    </div>
+    <div class="col-sm-6 flex">
+        <div class="col-sm-3 pd0">
+            Mandatsreferenz
+        </div>
+        <div class="col-sm-9 pd0">
+            <input type="text" class="form-control" [(ngModel)]="invoiceDetail.mandate_reference">
+        </div>
+    </div>
+</div>
+<div class="col-sm-12 invoice_detail_Content">
+    <div class="col-sm-6 flex">
+        <div class="col-sm-3 pd0">
+            PLZ
+        </div>
+        <div class="col-sm-9 pd0">
+            <input type="text" class="form-control" [(ngModel)]="invoiceDetail.customer_zip">
+        </div>
+    </div>
+    <div class="col-sm-6 flex">
+        <div class="col-sm-3 pd0">
+            Mandat Ort
+        </div>
+        <div class="col-sm-9 pd0">
+            <input type="text" class="form-control" [(ngModel)]="invoiceDetail.mandate_city">
+        </div>
+    </div>
+</div>
+<div class="col-sm-12 invoice_detail_Content">
+    <div class="col-sm-6 flex">
+        <div class="col-sm-3 pd0">
+            Ort
+        </div>
+        <div class="col-sm-9 pd0">
+            <input type="text" class="form-control" [(ngModel)]="invoiceDetail.customer_city">
+        </div>
+    </div>
+    <div class="col-sm-6 flex">
+        <div class="col-sm-3 pd0">
+            Mandat Datum
+        </div>
+        <div class="col-sm-9 pd0">
+            <input type="text" class="form-control" [(ngModel)]="invoiceDetail.mandate_date">
+        </div>
+    </div>
+</div>
+<div class="col-sm-12 invoice_detail_Content">
+    <div class="col-sm-6 flex">
+
+    </div>
+    <div class="col-sm-6 flex">
+        <div class="col-sm-3 pd0">
+            Mandat Person
+        </div>
+        <div class="col-sm-9 pd0">
+            <input type="text" class="form-control" [(ngModel)]="invoiceDetail.mandate_signee">
+        </div>
+    </div>
+</div>
+<div class="col-sm-12 invoice_detail_body">
+    <div class="col-sm-6">
+        <span>RECHNUNGSDATEN</span>
+    </div>
+</div>
+<div class="col-sm-12 invoice_detail_Content">
+    <div class="col-sm-6 flex">
+        <div class="col-sm-3 pd0">
+            Rechnungsnr.
+        </div>
+        <div class="col-sm-9 pd0">
+            <input type="text" class="form-control" [(ngModel)]="invoiceDetail.invoice_number">
+        </div>
+    </div>
+    <div class="col-sm-6 flex">
+        <div class="col-sm-3 pd0">
+            Rechnungsdatum
+        </div>
+        <div class="col-sm-9 pd0">
+            <input type="text" class="form-control" [(ngModel)]="invoiceDetail.invoice_date">
+        </div>
+    </div>
+</div>
+<div class="col-sm-12 invoice_detail_Content">
+    <div class="col-sm-6 flex">
+        <div class="col-sm-3 pd0">
+            Zeitraum
+        </div>
+        <div class="col-sm-9 pd0">
+            <input type="text" class="form-control" [(ngModel)]="invoiceDetail.invoice_period">
+        </div>
+    </div>
+    <div class="col-sm-6 flex">
+        <div class="col-sm-3 pd0">
+            Falligkeitsdatum
+        </div>
+        <div class="col-sm-9 pd0">
+            <input type="text" class="form-control" [(ngModel)]="invoiceDetail.invoice_due_date">
+        </div>
+    </div>
+</div>
+<div class="col-sm-12 invoice_detail_body">
+    <div class="col-sm-6">
+        <span>RECHNUNGSPOSTEN</span>
+    </div>
+</div>
+<div class="col-sm-12 invoice_detail_Content">
+    <div class="col-sm-1">Pos.</div>
+    <div class="col-sm-2">Name</div>
+    <div class="col-sm-5">Beschreibung</div>
+    <div class="col-sm-1">Anzahi</div>
+    <div class="col-sm-1">Einzelpreis</div>
+    <div class="col-sm-1">Summe</div>
+    <div class="col-sm-1"></div>
+</div>
+<div class="col-sm-12 invoice_detail_Content" style="background-color: white;    margin-bottom: 10px;"
+    *ngFor="let item of invoiceDetail.line_items;let i=index">
+    <div class="col-sm-1" style="font-size:22px">{{i+1}}.</div>
+    <div class="col-sm-2">
+        <input type="text" class="form-control" [(ngModel)]="item.name" id="kxcvsvscvun" name="kunvcxvxcvxden">
+    </div>
+    <div class="col-sm-5">
+        <textarea class="form-control" [(ngModel)]="item.description" rows="4" id="comment"></textarea>
+        <!-- <input type="text" class="form-control" [(ngModel)]="item.description" id="ksdfsdfsdun" name="kucvxcvxcnden"> -->
+    </div>
+    <div class="col-sm-1">
+        <input type="text" class="form-control" [(ngModel)]="item.quantity" (ngModelChange)="calculateInvoiceAmount()"
+            id="ksdfun" name="kundewwewefn">
+    </div>
+    <div class="col-sm-1 flex">
+        <input type="text" class="form-control" [(ngModel)]="item.price_cents" id="fds" name="fsd"
+            (ngModelChange)="calculateInvoiceAmount()">
+        <span class="symbol"> €</span>
+    </div>
+    <div class="col-sm-1">{{item.quantity * item.price_cents }} €</div>
+    <div class="col-sm-1">
+        <i class="fa fa-trash trash cursor_pointer" aria-hidden="true" (click)="deleteInvoice(i)"></i>
+    </div>
+</div>
+
+<div class="col-sm-12 invoice_detail_Content">
+    <div class="col-sm-1">
+        <span class="dot cursor_pointer" (click)="addNewInvoice()">
+            <i class="fa fa-plus"></i>
+        </span>
+    </div>
+    <div class="col-sm-5">
+
+    </div>
+    <div class="col-sm-1">
+
+    </div>
+    <div class="col-sm-1">
+
+    </div>
+    <div class="col-sm-2">
+        <div style="color: black">
+            <b>Netto</b>
+        </div>
+        <div>
+            Um,-St (19%)
+        </div>
+        <div>
+            Brutto
+        </div>
+    </div>
+    <div class="col-sm-1" style="text-align: end;">
+        <div style="color: black">
+            <b>{{invoiceTotal.totalAmount }} €</b>
+        </div>
+        <div>
+            {{invoiceTotal.tax}} €
+        </div>
+        <div>
+            {{invoiceTotal.totalAmount+invoiceTotal.tax}} €
+        </div>
+    </div>
+</div>

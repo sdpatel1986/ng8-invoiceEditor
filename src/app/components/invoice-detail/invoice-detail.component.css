@@ -1,0 +1,19 @@
+.dot {
+    height: 35px;
+    width: 35px;
+    background-color: rgb(21, 127, 239);
+    border-radius: 50%;
+    display: inline-block;
+    color: white;
+    text-align: center;
+    margin-left: 8px;
+    padding-top: 5%;
+    font-size: 16px;
+    }
+  
+
+    .symbol{
+        padding-left: 4px;
+        margin-top: 5px;
+    }
+    

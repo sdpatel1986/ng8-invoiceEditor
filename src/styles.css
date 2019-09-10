@@ -1,1 +1,125 @@
 /* You can add global styles to this file, and also import other style files */
+.header {
+  color: black;
+  font-size: 32px;
+}
+
+.header_body {
+  border-bottom: 1px solid gainsboro;
+  padding: 8px 11px 12px 30px;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 8%;
+  left: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 6px 6px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main_body {
+  height: calc(100vh - 70px);
+  margin-top: -25px;
+  background-color: #F2F5F8;
+  overflow-y: auto;
+
+}
+
+.sidebar_main {
+  background-color: #fff;
+  margin-top: 5px;
+  height: calc(100vh - 75px);
+  border-right: 1px solid gainsboro
+
+}
+
+.sidebar_header {
+  padding: 17px;
+  font-size: 15px;
+  color: #A3ACBC;
+}
+
+.sidebar_content {
+  font-size: 15px;
+  color: #A3ACBC;
+  padding: 14px 24px 33px 24px;
+}
+
+.divider {
+  border-bottom: 1px solid gainsboro;
+  padding: 15px;
+}
+
+.pd0 {
+  padding: 0px
+}
+
+.flLeft {
+  float: left;
+}
+
+.flRight {
+  float: right;
+}
+
+.arrow {
+  padding: 0px 10px 0px 10px;
+  font-size: 17px;
+}
+
+.invoice_detail_body {
+  display: flex;
+  padding: 30px 60px 10px 60px;
+  color: #8d939e;
+  font-size: 14px;
+
+}
+
+.invoice_detail_Content {
+  display: flex;
+  padding: 10px 60px 10px 60px;
+  color: #8d939e;
+  font-size: 14px;
+
+}
+
+.flex {
+  display: flex
+}
+
+.invoice_detail {
+  height: calc(100vh - 70px);
+  overflow-y: auto;
+}
+
+.bgColor {
+  background-color: #F2F5F8;
+}
+
+.cursor_pointer{
+  cursor: pointer;
+}
+
+.trash{
+  font-size: 26px;
+  color: #8d939e;
+}

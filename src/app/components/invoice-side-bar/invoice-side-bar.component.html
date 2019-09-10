@@ -1,0 +1,88 @@
+<div class="col-sm-12 pd0" style="display: flex">
+    <div class="col-sm-3 pd0 sidebar_main">
+        <div style="height: 92%;">
+            <div class="col-sm-12 sidebar_header">
+                <span>
+                    RECHNUNGEN
+                </span>
+                <span class="dot cursor_pointer" (click)="addNewInvoice()">
+                    <i class="fa fa-plus"></i>
+                </span>
+            </div>
+            <div class="col-sm-12 sidebar_content cursor_pointer" *ngFor="let list of invoiceList"
+                [ngClass]="{'bgColor':list.isActive,'flex':list.isEditable}" (click)="onSelectInvoice(list)">
+                <div *ngIf="!list.isEditable" class="flLeft" style="color: black">
+                    <b>{{list.customer_name}}</b>
+                </div>
+                <div *ngIf="!list.isEditable" class="flRight">
+                    {{list.totalAmount}} €
+                    <span class="arrow">
+                        <i class="fa fa-angle-right"></i>
+                    </span>
+                </div>
+                <div class="col-sm-5 pd0" *ngIf="list.isEditable">
+                    <input type="text" class="form-control" [(ngModel)]="list.customer_name" id="kxcvasdsvscvun"
+                        name="kunvcxvxcvasdxden">
+                </div>
+                <div *ngIf="list.isEditable" class="col-sm-2">
+
+                </div>
+                <div *ngIf="list.isEditable" class="col-sm-5">
+                    <input type="text" class="form-control" [(ngModel)]="list.totalAmount"
+                        (ngModelChange)="calculateInvoice()" id="kxwasdadcvsvscvun" name="kunvcxvxcvdasdaxden">
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="col-sm-12 sidebar_content">
+                <div class="flLeft" style="color: black">
+                    <b>Netto</b>
+                </div>
+                <div class="flRight">
+                    {{invoiceTotal.totalAmount}} €
+                    <span class="arrow">
+
+                    </span>
+                </div>
+            </div>
+            <div class="col-sm-12 sidebar_content">
+                <div class="flLeft" style="color: black">
+                    <b>Um.-St (19%)</b>
+                </div>
+                <div class="flRight">
+                    {{invoiceTotal.tax}} €
+                    <span class="arrow">
+
+                    </span>
+                </div>
+            </div>
+            <div class="col-sm-12 sidebar_content">
+                <div class="flLeft" style="color: black">
+                    <b>Brutto</b>
+                </div>
+                <div class="flRight">
+                    {{invoiceTotal.totalAmount + invoiceTotal.tax}} €
+                    <span class="arrow">
+
+                    </span>
+                </div>
+            </div>
+            <div>
+
+            </div>
+        </div>
+
+        <div class="container" *ngIf="isShow">
+            <button type="button" class="btn btn-primary" style="width: 120px" (click)="importInvoice()">Import</button>
+            <button type="button" class="btn btn-primary" style="width: 120px;margin-left: 20px"
+                (click)="export()">Export</button>
+        </div>
+    </div>
+    <div class="col-sm-9 invoice_detail">
+        <div class="main" style="    margin-bottom: 55px;">
+            <app-invoice-detail *ngIf="isShow" [invoiceDetail]="invoiceDetail"></app-invoice-detail>
+        </div>
+    </div>
+
+</div>
